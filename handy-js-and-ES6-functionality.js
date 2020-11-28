@@ -1,3 +1,22 @@
+// USING FUNCTION ARGUMENTS OBJECT TO WRITE FUCNTIONS W VARIABLE LENGTH ARGUMENTS
+// you can write functions for variable lenth input using the built-in 
+// arguments object in any function.  It is an array containing every input,
+// it has a length and you can loop through it etc.
+
+function makeUniqueArray() {
+    var arr = [];
+    for (let i in arguments) {
+        for (x in arguments[i]) {
+            if (!arr.includes(arguments[i][x])) {
+                arr.push(arguments[i][x])
+            }
+        }
+    }
+    return arr;
+};
+// should return [1,2,3,4,5,6,7,8,9]
+console.log(makeUniqueArray([1, 2, 3, 4], [3, 4, 5, 6, 7], [1, 2, 3, 7, 8, 9]))
+
 //      CURRYING FUNCTIONS / PARTIAL FUNCTIONS
 // useful when you can't require multiple arguments for your function
 
